@@ -11,7 +11,12 @@ public class App {
         Usuario user2 = new Usuario("BeneTesla", 120);
         Usuario user3 = new Usuario("Beniel", 190);
         List<Usuario> usuarios = Arrays.asList(user1, user2, user3);
-       Consumer<Usuario> mostrador = new Mostrador();
-         usuarios.forEach(mostrador);
-    }
+        Consumer<Usuario> mostrador = new Consumer<Usuario>() {
+            @Override
+            public void accept(Usuario u) {
+                System.out.println(u.getNome() + " - " + u.getPontos());
+            }
+        };
+        usuarios.forEach(mostrador);
+    };
 }
