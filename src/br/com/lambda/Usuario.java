@@ -28,5 +28,4 @@ public class Usuario {
     public void tornaModerador() {
         this.moderador = true;
     }
-
 }
