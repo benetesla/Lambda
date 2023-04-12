@@ -2,6 +2,7 @@ import br.com.lambda.Usuario;
 import br.com.lambda.Validator;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.function.ToIntFunction;
 import java.util.Arrays;
 import java.util.List;
 
@@ -39,6 +40,13 @@ public class App {
                 return u.isModerador();
             }
         };
+       ToIntFunction<String> tamanho = new ToIntFunction<String>() {
+            public int applyAsInt(String s) {        
+                return s.length();
+            }
+        };
+        System.out.println(tamanho.applyAsInt("Benevanio"));
+      
         usuarios.stream().filter(ehModerador).forEach(imprimeNome);
         usuarios.sort((u1, u2) -> u1.getNome().compareTo(u2.getNome()));
         usuarios.forEach(mostraMensagem.andThen(imprimeNome));
