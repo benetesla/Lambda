@@ -29,7 +29,6 @@ public class App {
                 System.out.println("Salvando usuário " + u.getNome());
             }
         };
-
         Consumer<Usuario> imprimeNome = new Consumer<Usuario>() {
             public void accept(Usuario u) {
                 System.out.println(u.getNome());
@@ -41,6 +40,7 @@ public class App {
                 return u.isModerador();
             }
         };
+        usuarios.sort((u1, u2) -> u1.getNome().compareTo(u2.getNome()));
         usuarios.forEach(mostraMensagem.andThen(imprimeNome));
        //usuario e moderador?
         usuarios.stream().filter(ehModerador).forEach(imprimeNome);
