@@ -23,7 +23,6 @@ public class App {
             }
         };
         validaCPF.valida(user1);
-
         Consumer<Usuario> mostraMensagem = new Consumer<Usuario>() {
             public void accept(Usuario u) {
                 System.out.println("Salvando usuário " + u.getNome());
@@ -36,13 +35,12 @@ public class App {
         };
         Predicate<Usuario> ehModerador = new Predicate<Usuario>() {
             public boolean test(Usuario u) {
-                System.out.println("Este usuário é moderador? " + u.isModerador());
                 return u.isModerador();
             }
         };
+        usuarios.stream().filter(ehModerador).forEach(imprimeNome);
+    
         usuarios.sort((u1, u2) -> u1.getNome().compareTo(u2.getNome()));
         usuarios.forEach(mostraMensagem.andThen(imprimeNome));
-       //usuario e moderador?
-        usuarios.stream().filter(ehModerador).forEach(imprimeNome);
-    }
+}
 }

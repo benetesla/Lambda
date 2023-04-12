@@ -34,6 +34,7 @@ public class Usuario {
         return moderador;
     }
     public void tornaModerador() {
+        System.out.println("Tornando " + this.nome + " moderador");
         this.moderador = true;
     }
 
