@@ -4,6 +4,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.ToIntFunction;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class App {
@@ -25,6 +26,7 @@ public class App {
             }
         };
         validaCPF.valida(user1);
+        usuarios.sort(Comparator.comparing(Usuario::getNome));
         Consumer<Usuario> mostraMensagem = new Consumer<Usuario>() {
             public void accept(Usuario u) {
                 System.out.println("Salvando usuário " + u.getNome());
@@ -46,11 +48,9 @@ public class App {
             }
         };
         System.out.println(tamanho.applyAsInt("Benevanio"));
-      
         usuarios.stream().filter(ehModerador).forEach(imprimeNome);
         usuarios.sort((u1, u2) -> u1.getNome().compareTo(u2.getNome()));
         usuarios.forEach(mostraMensagem.andThen(imprimeNome));
-
         List<String> palavras = Arrays.asList("Dragon ball", "Naruto", "One piece", "Bleach");
         palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
         palavras.forEach(s -> System.out.println(s));
