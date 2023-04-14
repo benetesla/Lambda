@@ -1,7 +1,5 @@
 package br.com.basicjava;
-
 import java.util.Scanner;
-
 public class Operators {
     public static void main(String[] args) {
         /*
@@ -9,6 +7,7 @@ public class Operators {
          * and &&
          * or ||
          * not !
+         * xor ^
          */
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite o valor de A: ");
@@ -36,6 +35,12 @@ public class Operators {
             System.out.println("A não é maior que B e C não é maior que D");
         } else {
             System.out.println("A é maior que B e C é maior que D");
+        }
+
+        if (a > b ^ c > d) {
+            System.out.println("A é maior que B ou C é maior que D, mas não os dois");
+        } else {
+            System.out.println("A não é maior que B ou C não é maior que D, ou os dois");
         }
 
         scanner.close();
