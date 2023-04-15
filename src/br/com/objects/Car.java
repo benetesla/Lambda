@@ -43,5 +43,8 @@ public class Car {
     public void setPrice(double price) {
         this.price = price;
     }    
+    public void drive() {
+        System.out.println("Driving...");
+    }
 
 }
