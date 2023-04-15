@@ -1,6 +1,20 @@
 package br.com.objects;
 
 public class Human {
+    /*
+     * Primeirra parte
+     * Temos os atributos da classe
+     * Segunda partte os metodos
+     */
+
+    /*
+     * 
+     * Atributos
+     * Nome
+     * Idade
+     * Altura
+     * Peso
+     */
     private String name;
     private int age;
     private double height;
@@ -44,7 +58,13 @@ public class Human {
         this.height = height;
         this.weight = weight;
     }
-
+    /*
+     * Metodos
+     * Falar
+     * Comer
+     * Dormir
+     */
+    
     public void eat() {
         System.out.println("Eating...");
     }
@@ -52,4 +72,9 @@ public class Human {
     public void sleep() {
         System.out.println("Sleeping...");
     }
+
+    public void speak() {
+        System.out.println("Speaking...");
+    }
+    
 }
