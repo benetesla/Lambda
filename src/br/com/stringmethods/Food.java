@@ -14,4 +14,7 @@ public class Food {
     Food(String name) {
         this.name = name;
     }
+    public void cozinha() {
+        System.out.println("Cozinhando " + this.name);
+    }
 }

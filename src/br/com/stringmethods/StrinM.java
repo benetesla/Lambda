@@ -13,5 +13,6 @@ public class StrinM {
         for (Food food : foods) {
             System.out.println(food.getName());
         }
+        food1.cozinha();
     }
 }
